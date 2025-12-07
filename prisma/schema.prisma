@@ -8,14 +8,4 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Pet {
-  id            Int     @id @default(autoincrement())
-  name          String
-  type          String
-  age           Int
-  breed         String
-  description   String
-  image         String
-  ownerName     String
-  ownerWhatsapp String
-}
+
