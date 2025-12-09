@@ -1,11 +1,8 @@
-// prisma/schema.prisma
 datasource db {
   provider = "postgresql"
-  // Remova a linha do url daqui!
+  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
 }
-
-
