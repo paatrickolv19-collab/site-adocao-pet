@@ -1,11 +1,12 @@
-import { defineConfig } from "@prisma/config";
+import { defineConfig } from '@prisma/internals';
 
 export default defineConfig({
-  datasources: {
+  schema: './schema.prisma',
+  datasource: {
     db: {
+      // Prisma 7 exige ESSA propriedade:
+      provider: 'postgresql',
       url: process.env.DATABASE_URL,
     },
   },
-  // se estiver usando migrate/dev:
-  schema: "./schema.prisma",
 });
