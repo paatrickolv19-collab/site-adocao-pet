@@ -1,8 +1,16 @@
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
+}
+
+model Pet {
+  id        Int      @id @default(autoincrement())
+  name      String
+  type      String
+  age       Int
+  adopted   Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
